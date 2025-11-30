@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";   
 import React, { useState } from "react";
 import type { ReactNode } from "react";
 
@@ -15,12 +16,12 @@ export default function Page() {
         <p className="mt-4 max-w-xl text-muted-foreground">
           Brotherhood in every stitch. Premium apparel built for confidence.
         </p>
-        <a
+        <Link
           href="#products"
           className="mt-6 rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90 transition"
         >
           Explore Collection
-        </a>
+        </Link>
       </section>
 
       {/* Products */}
@@ -37,7 +38,6 @@ export default function Page() {
   );
 }
 
-
 /* -------------------- Navbar -------------------- */
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -46,16 +46,16 @@ function Navbar() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
         
         {/* Logo + Brand */}
-        <a href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">   
           <Image
-            src="/logo.jpg"   
+            src="/logo.jpg"
             alt="Aethra Logo"
             width={40}
             height={40}
             className="rounded-full"
           />
           <span className="font-bold text-lg">AETHRA</span>
-        </a>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -68,28 +68,28 @@ function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8 font-medium">
-          <li><a href="#products" className="hover:text-primary transition">Products</a></li>
-          <li><a href="#about" className="hover:text-primary transition">About</a></li>
-          <li><a href="#contact" className="hover:text-primary transition">Contact</a></li>
+          <li><Link href="#products" className="hover:text-primary transition">Products</Link></li>
+          <li><Link href="#about" className="hover:text-primary transition">About</Link></li>
+          <li><Link href="#contact" className="hover:text-primary transition">Contact</Link></li>
         </ul>
 
         {/* CTA */}
-        <a
+        <Link
           href="#shop"
           className="hidden md:inline-block rounded-md bg-primary px-4 py-2 text-white hover:bg-primary/90 transition"
         >
           Shop Now
-        </a>
+        </Link>
       </nav>
 
       {/* Mobile Dropdown */}
       {open && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <ul className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-2">
-            <li><a href="#products" className="block py-2">Products</a></li>
-            <li><a href="#about" className="block py-2">About</a></li>
-            <li><a href="#contact" className="block py-2">Contact</a></li>
-            <li><a href="#shop" className="block py-2 font-semibold">Shop Now</a></li>
+            <li><Link href="#products" className="block py-2">Products</Link></li>
+            <li><Link href="#about" className="block py-2">About</Link></li>
+            <li><Link href="#contact" className="block py-2">Contact</Link></li>
+            <li><Link href="#shop" className="block py-2 font-semibold">Shop Now</Link></li>
           </ul>
         </div>
       )}
@@ -104,9 +104,15 @@ function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <p>&copy; {new Date().getFullYear()} AETHRA PH. All rights reserved.</p>
         <div className="flex gap-4">
-          <a href="#" className="hover:text-white transition">Instagram</a>
-          <a href="#" className="hover:text-white transition">Facebook</a>
-          <a href="#" className="hover:text-white transition">Tiktok</a>
+          <Link href="#" className="hover:text-white transition">
+            Instagram
+          </Link>
+          <Link href="#" className="hover:text-white transition">
+            Facebook
+          </Link>
+          <Link href="#" className="hover:text-white transition">
+            Tiktok
+          </Link>
         </div>
       </div>
     </footer>
@@ -167,7 +173,7 @@ function BentoGrid1() {
             </CardContent>
           </Card>
 
-          {/* AE2 — Top Middle */}
+          {/* AE2 */}
           <Card className="rounded-xl overflow-hidden flex flex-col">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">Aethra Sando</CardTitle>
@@ -186,7 +192,7 @@ function BentoGrid1() {
             </CardContent>
           </Card>
 
-          {/* AE3 — Bottom Middle */}
+          {/* AE3 */}
           <Card className="rounded-xl overflow-hidden flex flex-col lg:col-start-2">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">Aethra Tshirt</CardTitle>
@@ -203,7 +209,7 @@ function BentoGrid1() {
             </CardContent>
           </Card>
 
-          {/* AE4 — Tall Right */}
+          {/* AE4 */}
           <Card className="rounded-xl overflow-hidden flex flex-col lg:col-start-3 lg:row-span-2 lg:row-start-1">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">Aethra Classic</CardTitle>
